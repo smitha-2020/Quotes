@@ -1,0 +1,98 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+.container{
+    width:100%;
+    height:100vh;
+    background-color: #99ccff;
+    position:relative;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.box{
+    width: 50%;
+    position: relative;
+    height: auto;
+    min-height: 50%;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  
+}
+.content-quote{
+    position: absolute;
+    top: 100px;
+    left: 20%;
+    background-color: #cceeff;
+    width: 64%;
+    height: auto;
+    opacity: 0.5;
+    min-height: 110px;
+
+}
+.content-quote i {
+    display:block;
+}
+.content-text{
+    display:block;
+    text-align: center;
+    font-weight: bolder;
+    height:auto;
+}
+.author{
+    display: flex;
+    justify-content:center;
+    text-align:center;
+    font-size:10px;
+    margin:0 auto;
+    width: auto;
+    margin-top: 30px;
+    height:auto;
+}
+button.btn-quote{
+    background-color: #99ccff;
+    border: 1px solid white;
+    color: white;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 80%;
+    left: 42%;
+    padding: 5%;
+    margin-top: 18px;
+}
+.twitter-bird{
+    position:absolute;
+    width: 0;
+    height: 0;
+    border-top: 100px solid #b3d9ff;
+    border-left: 100px solid transparent;
+    right:0px;
+    opacity
+    :0.5;
+}
+.twitter-bird i{
+    position: absolute;
+    left: -45px;
+    top: -70px;   
+    animation:spin 3s;
+}
+@keyframes spin{
+    from{transform:scope(0.8)}
+    to{transform:scope(1.2)}
+}
+@-moz-keyframes spin {
+    from { -moz-transform:scale(0.8); }
+    to { -moz-transform: scale(1.2); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: scale(0.8); }
+    to { -webkit-transform: scale(1.2); }
+}

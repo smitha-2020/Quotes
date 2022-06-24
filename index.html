@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="container">
+            <div class="box">
+
+                <div class="twitter-bird"><i class="fab fa-twitter"></i></div>
+
+                <div class="content-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <div class="content-text" id="content-text-quote">
+                            Where there is a will there is a way.
+                            
+                    </div>
+                    <div class="author" id ="quote-author"></div>
+                    
+
+                </div>
+                <div>
+                    <button class="btn-quote" onclick=getQuotes()>New Quote</button>
+                </div>
+               
+
+
+               
+
+            </div>
+           
+
+        </div>
+        
+        <script>
+            const getMsg = () => {
+                alert("hi");
+            }
+            const getQuotes =async () => {
+                var quoteDetails = await fetch("https://type.fit/api/quotes");
+                var quotes = await quoteDetails.json();
+                //console.log(quotes.length);
+                
+                var rand = Math.random() * (quotes.length);
+                console.log(quotes[Math.floor(rand)])
+                document.getElementById('content-text-quote').innerText = quotes[Math.floor(rand)].text;
+                quotes[Math.floor(rand)].author == null?document.getElementById('quote-author').innerText = 'Unknown':document.getElementById('quote-author').innerText = quotes[Math.floor(rand)].author;
+                
+               
+                
+            //  var quoteArr = await fetch("//https://type.fit/api/quotes");
+            //  alert(quoteArr);
+            //  console.log(quoteArr);
+            };
+            getQuotes();
+        </script>
+    </body>
+</html>
